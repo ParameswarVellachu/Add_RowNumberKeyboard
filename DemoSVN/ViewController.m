@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     printf("welcome to params");
+    printf("welcome to paramsInd");
+
 }
 
 - (void)didReceiveMemoryWarning {
