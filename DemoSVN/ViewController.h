@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import <MWKNumberRowInputAccessory/MWKNumberRowInputAccessory.h>
+@interface ViewController : UIViewController<MWKInputAccessoryViewDelegate,UITextFieldDelegate>
+@property (nonatomic, strong) id<MWKInputAccessoryView> numberRow;
 
 @end
 

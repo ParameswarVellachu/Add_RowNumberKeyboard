@@ -1,0 +1,6 @@
+framework module MWKNumberRowInputAccessory {
+  umbrella header "MWKNumberRowInputAccessory.h"
+
+  export *
+  module * { export * }
+}

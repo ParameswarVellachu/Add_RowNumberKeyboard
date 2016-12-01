@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *txtDemo;
 
 @end
 
@@ -19,7 +20,27 @@
     // Do any additional setup after loading the view, typically from a nib.
     printf("welcome to params");
     printf("welcome to paramsInd");
+    
+    CGRect frame = [MWKNumberRowInputAccessoryViewFactory defaultFramePortrait];
+    self.numberRow = [MWKNumberRowInputAccessoryViewFactory numberRowInputAccessoryViewWithFrame:frame inputViewStyle:UIInputViewStyleKeyboard];
+    self.numberRow.keyboardAppearance = UIKeyboardAppearanceDefault;
+    self.txtDemo.keyboardAppearance = UIKeyboardAppearanceDefault;
+    self.txtDemo.inputAccessoryView = (UIView*)self.numberRow;
+    self.numberRow.delegate = self;
+}
 
+#pragma mark - MWKNumberRowInputAccessoryViewDelegate
+
+- (void)inputAccessory:(MWKNumberRowInputAccessoryView*)aInputAccessory didGenerateValue:(id)aValue
+{
+    {
+        NSString *currentText = self.txtDemo.text;
+        NSString *newText = [NSString stringWithFormat:@"%@%@", currentText, aValue];
+        self.txtDemo.text = newText;
+        
+    }
+ 
+    
 }
 
 - (void)didReceiveMemoryWarning {
