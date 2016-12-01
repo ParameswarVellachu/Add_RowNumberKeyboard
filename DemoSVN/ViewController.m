@@ -18,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    printf("welcome to params");
-    printf("welcome to paramsInd");
     
     CGRect frame = [MWKNumberRowInputAccessoryViewFactory defaultFramePortrait];
     self.numberRow = [MWKNumberRowInputAccessoryViewFactory numberRowInputAccessoryViewWithFrame:frame inputViewStyle:UIInputViewStyleKeyboard];
